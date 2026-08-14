@@ -2,8 +2,7 @@
 
 ## Environment
 
-- Node **16** (`nvm use`) — this is what Angular 14 supports. Do not upgrade Node
-  unless you are working the toolchain workstream (`W0` in `MIGRATION.md`).
+- Node **20** (`nvm use`) — Angular 18 requires `^18.19.1 || ^20.11.1 || >=22`.
 - Install with `npm install --legacy-peer-deps`.
 - Chrome is required for the Karma tests (`CHROME_BIN`).
 
@@ -14,8 +13,7 @@ npm run build     # three libraries + five applications
 npm test          # unit tests for every project
 ```
 
-Both must pass. There is no lint target — `tslint.json` is dead config left over
-from the Angular 8 era and is scheduled for deletion.
+Both must pass. There is no lint target.
 
 ## Conventions
 

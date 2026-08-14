@@ -1,8 +1,9 @@
 # Bank of America — Consumer & Wealth Front-End Estate
 
-Angular **14.2** monorepo containing the shared front-end platform libraries and
-five product applications. Angular 14 left long-term support in **November 2023**;
-the estate is scheduled for the **Angular 18** uplift (programme `BOFA-9000`).
+Angular **18.2** monorepo containing the shared front-end platform libraries and
+five product applications. The toolchain has been uplifted to Angular 18
+(programme `BOFA-9000`); the per-library and per-application workstreams are
+tracked in `MIGRATION.md`.
 
 > This repository is a demo estate. The code is representative of a real legacy
 > Angular workspace — shared design system, class guards, NgModules, Material
@@ -24,8 +25,6 @@ bofa-legacy-platform/
 │   ├── wealth-advisor/             app      · Merrill holdings workstation     (port 4203)
 │   └── small-business-banking/     app      · ACH payroll batches              (port 4204)
 ├── services/                       five dependency-free mock edge services (ports 7001-7005)
-├── e2e/protractor.conf.js          dead config kept for the nightly Jenkins job
-└── tslint.json                     dead config from the Angular 8 era
 ```
 
 Every application depends on all three libraries, so a change in
@@ -44,10 +43,10 @@ Team ownership is recorded in `.github/CODEOWNERS`.
 
 ## Running it
 
-Requires Node 16 (`.nvmrc`), which is what Angular 14 supports.
+Requires Node 20 (`.nvmrc`) — Angular 18 requires `^18.19.1 || ^20.11.1 || >=22`.
 
 ```bash
-nvm use                 # 16.20.2
+nvm use                 # 20.20.2
 npm install --legacy-peer-deps
 
 npm run build:libs      # build the three libraries
