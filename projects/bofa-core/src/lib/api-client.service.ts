@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { firstValueFrom, Observable, of } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
 
 import { BOFA_CORE_CONFIG, BofaCoreConfig } from './config';
@@ -17,11 +17,7 @@ export class ApiClientService {
 
   /** Fire-and-forget style read used across the estate. */
   fetch<T>(path: string, payload: T): Promise<T> {
-    // NOTE: toPromise() is deprecated; the platform team has an open ticket
-    // (BOFA-9042) to move every caller onto firstValueFrom().
-    return of(payload)
-      .pipe(delay(0))
-      .toPromise() as Promise<T>;
+    return firstValueFrom(of(payload).pipe(delay(0)));
   }
 
   stream<T>(path: string, payload: T): Observable<T> {
