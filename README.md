@@ -23,7 +23,9 @@ bofa-legacy-platform/
 │   ├── mortgage-origination/       app      · home-loan application wizard     (port 4202)
 │   ├── wealth-advisor/             app      · Merrill holdings workstation     (port 4203)
 │   └── small-business-banking/     app      · ACH payroll batches              (port 4204)
-└── services/                       five dependency-free mock edge services (ports 7001-7005)
+├── services/                       five dependency-free mock edge services (ports 7001-7005)
+├── e2e/protractor.conf.js          dead config kept for the nightly Jenkins job
+└── tslint.json                     dead config from the Angular 8 era
 ```
 
 Every application depends on all three libraries, so a change in
@@ -42,10 +44,10 @@ Team ownership is recorded in `.github/CODEOWNERS`.
 
 ## Running it
 
-Requires Node 20 (`.nvmrc`), which is what Angular 18 supports.
+Requires Node 16 (`.nvmrc`), which is what Angular 14 supports.
 
 ```bash
-nvm use                 # 20.18.1
+nvm use                 # 16.20.2
 npm install --legacy-peer-deps
 
 npm run build:libs      # build the three libraries

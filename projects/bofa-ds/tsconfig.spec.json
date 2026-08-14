@@ -9,5 +9,8 @@
   "include": [
     "**/*.d.ts",
     "**/*.spec.ts"
+  ],
+  "files": [
+    "src/test.ts"
   ]
 }
