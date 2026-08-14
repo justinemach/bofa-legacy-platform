@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { firstValueFrom, of } from 'rxjs';
 
 export interface AuditEvent {
   actor: string;
@@ -21,8 +21,7 @@ export class AuditLogService {
       occurredAt: new Date().toISOString(),
     };
     this.buffer.push(event);
-    // BOFA-9042: still on the deprecated toPromise() bridge.
-    return of(event).toPromise() as Promise<AuditEvent>;
+    return firstValueFrom(of(event));
   }
 
   get recorded(): AuditEvent[] {

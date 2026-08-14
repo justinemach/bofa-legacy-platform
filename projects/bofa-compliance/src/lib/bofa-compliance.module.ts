@@ -11,9 +11,6 @@ import { DisclosureDialogComponent } from './disclosure-dialog/disclosure-dialog
   declarations: [DisclosureDialogComponent],
   imports: [CommonModule, MatButtonModule, MatDialogModule],
   exports: [DisclosureDialogComponent],
-  // The dialog is opened imperatively, so it has to be listed here for the
-  // ViewEngine-era compiler that this estate was originally written against.
-  entryComponents: [DisclosureDialogComponent],
 })
 export class BofaComplianceModule {
   static forRoot(): ModuleWithProviders<BofaComplianceModule> {
