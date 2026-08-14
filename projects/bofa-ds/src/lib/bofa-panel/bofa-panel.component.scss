@@ -1,22 +1,22 @@
 /* Panel chrome. The header spacing overrides target Material's internal card
- * elements; the legacy card DOM puts padding on the host, which the brand
- * spec does not allow. */
+ * elements; the MDC card DOM puts padding on the host, which the brand spec
+ * does not allow. */
 .bofa-panel {
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
   margin-bottom: 16px;
 
-  ::ng-deep .mat-card-header-text {
+  ::ng-deep .mat-mdc-card-header-text {
     margin-left: 0;
   }
 
-  ::ng-deep .mat-card-title {
+  ::ng-deep .mat-mdc-card-title {
     font-size: 18px;
     font-weight: 700;
     color: #012169;
   }
 
-  ::ng-deep .mat-card-subtitle {
+  ::ng-deep .mat-mdc-card-subtitle {
     color: #6b7280;
   }
 }

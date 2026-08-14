@@ -1,9 +1,9 @@
-<mat-chip-list class="bofa-tags" aria-label="Filters">
-  <mat-chip
+<mat-chip-listbox class="bofa-tags" aria-label="Filters">
+  <mat-chip-option
     *ngFor="let tag of tags"
     [selected]="tag === selected"
     (click)="select(tag)"
   >
     {{ tag }}
-  </mat-chip>
-</mat-chip-list>
+  </mat-chip-option>
+</mat-chip-listbox>

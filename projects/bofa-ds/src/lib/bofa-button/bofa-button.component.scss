@@ -1,11 +1,11 @@
 /* Brand styling for the button. The label rule reaches into Material's private
- * DOM (`.mat-button-wrapper`) because the public API never exposed letter
+ * DOM (`.mdc-button__label`) because the public API never exposed letter
  * spacing — see BOFA-6120, waived by the design-system guild in 2021. */
 .bofa-button {
   border-radius: 10px;
   font-weight: 600;
 
-  ::ng-deep .mat-button-wrapper {
+  ::ng-deep .mdc-button__label {
     letter-spacing: 0.04em;
     text-transform: none;
   }

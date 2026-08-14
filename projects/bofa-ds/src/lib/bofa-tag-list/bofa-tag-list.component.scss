@@ -1,13 +1,18 @@
-/* Chip branding. Material's legacy chips expose no colour token, so the
- * selected state is styled through the internal `.mat-chip` classes. */
+/* Chip branding. MDC chips expose no colour input, so the selected state is
+ * styled through the chip design tokens plus Material's internal classes. */
 .bofa-tags {
-  ::ng-deep .mat-chip {
+  --mdc-chip-container-shape-radius: 6px;
+
+  ::ng-deep .mat-mdc-chip {
     border-radius: 6px;
     font-weight: 600;
   }
 
-  ::ng-deep .mat-chip.mat-standard-chip.mat-chip-selected {
-    background-color: #012169;
-    color: #ffffff;
+  ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected {
+    --mdc-chip-elevated-container-color: #012169;
+    --mdc-chip-elevated-selected-container-color: #012169;
+    --mdc-chip-label-text-color: #ffffff;
+    --mdc-chip-selected-label-text-color: #ffffff;
+    --mdc-chip-with-icon-selected-icon-color: #ffffff;
   }
 }
