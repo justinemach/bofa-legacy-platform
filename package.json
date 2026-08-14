@@ -1,0 +1,53 @@
+{
+  "name": "bofa-legacy-platform",
+  "version": "3.14.2",
+  "description": "Bank of America consumer & wealth front-end estate: shared platform libraries plus five product applications. Angular 14 (LTS ended 2023-11) \u2014 scheduled for the Angular 18 uplift.",
+  "private": true,
+  "engines": {
+    "node": ">=14.20.0 <17.0.0",
+    "npm": ">=6.14.0"
+  },
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve digital-banking",
+    "start:cards": "ng serve card-services --port 4201",
+    "start:mortgage": "ng serve mortgage-origination --port 4202",
+    "start:wealth": "ng serve wealth-advisor --port 4203",
+    "start:sbb": "ng serve small-business-banking --port 4204",
+    "build:libs": "ng build bofa-core && ng build bofa-compliance && ng build bofa-ds",
+    "build": "npm run build:libs && ng build digital-banking && ng build card-services && ng build mortgage-origination && ng build wealth-advisor && ng build small-business-banking",
+    "test": "ng test bofa-ds --watch=false && ng test bofa-core --watch=false && ng test bofa-compliance --watch=false && ng test digital-banking --watch=false && ng test card-services --watch=false && ng test mortgage-origination --watch=false && ng test wealth-advisor --watch=false && ng test small-business-banking --watch=false",
+    "test:libs": "ng test bofa-ds --watch=false && ng test bofa-core --watch=false && ng test bofa-compliance --watch=false",
+    "services": "node services/run-all.js"
+  },
+  "dependencies": {
+    "@angular/animations": "14.2.12",
+    "@angular/cdk": "14.2.7",
+    "@angular/common": "14.2.12",
+    "@angular/compiler": "14.2.12",
+    "@angular/core": "14.2.12",
+    "@angular/forms": "14.2.12",
+    "@angular/material": "14.2.7",
+    "@angular/platform-browser": "14.2.12",
+    "@angular/platform-browser-dynamic": "14.2.12",
+    "@angular/router": "14.2.12",
+    "rxjs": "7.5.7",
+    "tslib": "2.4.0",
+    "zone.js": "0.11.8"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "14.2.12",
+    "@angular/cli": "14.2.12",
+    "@angular/compiler-cli": "14.2.12",
+    "@types/jasmine": "4.0.3",
+    "@types/node": "16.11.68",
+    "jasmine-core": "4.3.0",
+    "karma": "6.4.1",
+    "karma-chrome-launcher": "3.1.1",
+    "karma-coverage": "2.2.0",
+    "karma-jasmine": "5.1.0",
+    "karma-jasmine-html-reporter": "2.0.0",
+    "ng-packagr": "14.2.2",
+    "typescript": "4.7.4"
+  }
+}

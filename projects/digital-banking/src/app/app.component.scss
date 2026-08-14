@@ -1,0 +1,21 @@
+.nav {
+  display: flex;
+  gap: 16px;
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.85;
+    font-weight: 600;
+  }
+
+  a.active {
+    opacity: 1;
+    text-decoration: underline;
+  }
+}
+
+.greeting {
+  margin: 16px 0 0;
+  color: #5a6470;
+}

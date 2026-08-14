@@ -1,0 +1,26 @@
+/*
+ * Global styles. Pulls in the shared Material theme from the design system so
+ * this application matches the rest of the estate.
+ */
+@import '../../bofa-ds/src/styles/bofa-theme';
+
+html,
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  background: #f4f6f8;
+  color: #16191c;
+}
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px 48px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  margin: 16px 0;
+}

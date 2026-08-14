@@ -1,0 +1,33 @@
+/* List and toggle branding. Both reach into Material's internal elements: the
+ * legacy list puts its flex container on `.mat-list-item-content`, and the
+ * toggle exposes no colour token for the thumb. */
+.payees {
+  ::ng-deep .mat-list-item-content {
+    display: grid !important;
+    grid-template-columns: 2fr 2fr 1fr;
+    align-items: center;
+    padding: 0 4px !important;
+  }
+}
+
+.same-day {
+  margin: 8px 0 16px;
+
+  ::ng-deep .mat-slide-toggle-thumb {
+    background-color: #012169;
+  }
+}
+
+.amount {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.routing {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.total {
+  margin: 16px 0;
+}

@@ -1,0 +1,13 @@
+/* Chip branding. Material's legacy chips expose no colour token, so the
+ * selected state is styled through the internal `.mat-chip` classes. */
+.bofa-tags {
+  ::ng-deep .mat-chip {
+    border-radius: 6px;
+    font-weight: 600;
+  }
+
+  ::ng-deep .mat-chip.mat-standard-chip.mat-chip-selected {
+    background-color: #012169;
+    color: #ffffff;
+  }
+}

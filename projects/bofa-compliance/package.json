@@ -1,0 +1,14 @@
+{
+  "name": "bofa-compliance",
+  "version": "3.14.2",
+  "description": "Regulatory disclosures, audit trail and feature-flag plumbing required on every customer-facing Bank of America screen.",
+  "peerDependencies": {
+    "@angular/common": "^14.2.0",
+    "@angular/core": "^14.2.0",
+    "@angular/material": "^14.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

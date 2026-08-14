@@ -1,0 +1,37 @@
+<bofa-panel heading="Household holdings" subheading="Consolidated across all accounts">
+  <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+
+  <table mat-table [dataSource]="dataSource" matSort class="holdings-table">
+    <ng-container matColumnDef="symbol">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Symbol</th>
+      <td mat-cell *matCellDef="let row">{{ row.symbol }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let row">{{ row.description }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="quantity">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Quantity</th>
+      <td mat-cell *matCellDef="let row">{{ row.quantity }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="marketValue">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Market value</th>
+      <td mat-cell *matCellDef="let row">{{ row.marketValue | bofaMoney }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="dayChangePercent">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Day change</th>
+      <td mat-cell *matCellDef="let row" [class.down]="row.dayChangePercent < 0">
+        {{ row.dayChangePercent }}%
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <p class="total">Total market value: <strong>{{ totalMarketValue | bofaMoney }}</strong></p>
+</bofa-panel>

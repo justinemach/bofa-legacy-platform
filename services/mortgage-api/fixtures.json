@@ -1,0 +1,16 @@
+{
+  "/rates": [
+    {
+      "term": 15,
+      "ratePercent": 5.625
+    },
+    {
+      "term": 20,
+      "ratePercent": 6.125
+    },
+    {
+      "term": 30,
+      "ratePercent": 6.375
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+/* Legal requires a fixed reading width and the brand border on the modal.
+ * Material exposes no token for the container, so the panel is styled through
+ * its internal class. */
+.disclosure-body {
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+:host ::ng-deep .mat-dialog-container {
+  border-top: 4px solid #012169;
+  border-radius: 10px;
+}

@@ -1,0 +1,13 @@
+<bofa-page-header [title]="title" lineOfBusiness="Consumer & Small Business">
+  <nav class="nav">
+    <a routerLink="/accounts" routerLinkActive="active">Accounts</a>
+    <a routerLink="/transfers" routerLinkActive="active">Transfers</a>
+  </nav>
+</bofa-page-header>
+
+<div class="page">
+  <p class="greeting" *ngIf="session.currentUser as user">
+    Signed in as {{ user.displayName }}
+  </p>
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,19 @@
+{
+  "/cards": [
+    {
+      "name": "Travel Rewards",
+      "apr": "19.99%",
+      "annualFee": 0
+    },
+    {
+      "name": "Customized Cash Rewards",
+      "apr": "17.49%",
+      "annualFee": 0
+    },
+    {
+      "name": "Premium Rewards",
+      "apr": "21.24%",
+      "annualFee": 95
+    }
+  ]
+}

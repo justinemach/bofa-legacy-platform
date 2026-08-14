@@ -1,0 +1,25 @@
+<bofa-panel heading="Your accounts" subheading="Balances as of today">
+  <div class="toolbar">
+    <bofa-field
+      label="Find an account"
+      placeholder="Search by nickname"
+      [value]="searchTerm"
+      (valueChange)="searchTerm = $event"
+    ></bofa-field>
+    <bofa-button variant="primary" (pressed)="onSearch()">Search</bofa-button>
+  </div>
+
+  <p *ngIf="loading">Loading accounts…</p>
+
+  <ul class="accounts" *ngIf="!loading">
+    <li *ngFor="let account of accounts">
+      <span class="name">{{ account.name }}</span>
+      <span class="type">{{ account.productType }}</span>
+      <span class="balance">{{ account.balance | bofaMoney }}</span>
+    </li>
+  </ul>
+
+  <p class="total" *ngIf="!loading">
+    Total position: <strong>{{ totalBalance | bofaMoney }}</strong>
+  </p>
+</bofa-panel>

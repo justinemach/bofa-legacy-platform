@@ -1,0 +1,18 @@
+/* Brand styling for the text input. Targets Material's internal layout nodes
+ * to hit the 8px grid the brand team signed off on (BOFA-4471). */
+.bofa-field {
+  width: 100%;
+
+  ::ng-deep .mat-form-field-infix {
+    padding: 0.6em 0;
+  }
+
+  ::ng-deep .mat-form-field-label {
+    font-weight: 600;
+    color: #0c6a48;
+  }
+
+  ::ng-deep .mat-form-field-underline {
+    background-color: #b0b7bc;
+  }
+}

@@ -1,0 +1,10 @@
+<mat-form-field appearance="legacy" class="bofa-field">
+  <mat-label>{{ label }}</mat-label>
+  <input
+    matInput
+    [placeholder]="placeholder"
+    [value]="value"
+    (input)="onInput($event)"
+  />
+  <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
+</mat-form-field>

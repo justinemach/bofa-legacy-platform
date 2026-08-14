@@ -1,0 +1,13 @@
+# Ownership map. Each product application is owned by a separate delivery team;
+# the shared platform libraries are owned by the front-end platform team.
+# This split is also how migration work is parallelised.
+
+/projects/bofa-ds/                    @bofa/fe-platform-design-system
+/projects/bofa-core/                  @bofa/fe-platform-core
+/projects/bofa-compliance/            @bofa/risk-compliance-engineering
+/projects/digital-banking/            @bofa/retail-digital-banking
+/projects/card-services/              @bofa/consumer-card-services
+/projects/mortgage-origination/       @bofa/home-loans-origination
+/projects/wealth-advisor/             @bofa/merrill-wealth-platform
+/projects/small-business-banking/     @bofa/business-banking
+/services/                            @bofa/integration-services

@@ -1,0 +1,23 @@
+.bofa-page-header {
+  background: linear-gradient(90deg, #012169 0%, #0b3f8c 100%);
+  color: #ffffff;
+  padding: 20px 24px;
+  border-radius: 0 0 12px 12px;
+
+  .lob {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 11px;
+    opacity: 0.85;
+  }
+
+  h1 {
+    margin: 4px 0 0;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .actions {
+    margin-top: 8px;
+  }
+}

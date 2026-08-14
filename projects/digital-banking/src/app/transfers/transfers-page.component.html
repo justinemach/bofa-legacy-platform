@@ -1,0 +1,25 @@
+<bofa-panel heading="Transfers" subheading="Move money between your accounts">
+  <div class="toolbar">
+    <bofa-field
+      label="Recipient"
+      placeholder="Account nickname"
+      [value]="recipient"
+      (valueChange)="recipient = $event"
+    ></bofa-field>
+    <bofa-field
+      label="Amount"
+      placeholder="0.00"
+      [value]="amount"
+      (valueChange)="amount = $event"
+    ></bofa-field>
+    <bofa-button variant="primary" (pressed)="schedule()">Schedule</bofa-button>
+  </div>
+
+  <table class="scheduled">
+    <tr *ngFor="let transfer of scheduled">
+      <td>{{ transfer.to }}</td>
+      <td>{{ transfer.amount | bofaMoney }}</td>
+      <td>{{ transfer.when }}</td>
+    </tr>
+  </table>
+</bofa-panel>

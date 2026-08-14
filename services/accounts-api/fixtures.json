@@ -1,0 +1,29 @@
+{
+  "/accounts": [
+    {
+      "id": "chk-01",
+      "name": "Advantage Plus Checking",
+      "productType": "CHECKING",
+      "balance": 4210.55
+    },
+    {
+      "id": "sav-02",
+      "name": "Rainy Day Savings",
+      "productType": "SAVINGS",
+      "balance": 18250.0
+    },
+    {
+      "id": "crd-03",
+      "name": "Travel Rewards Card",
+      "productType": "CREDIT_CARD",
+      "balance": -732.18
+    }
+  ],
+  "/transfers": [
+    {
+      "to": "Rainy Day Savings",
+      "amount": 250,
+      "when": "Every Friday"
+    }
+  ]
+}

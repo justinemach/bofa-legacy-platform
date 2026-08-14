@@ -1,0 +1,7 @@
+<mat-card class="bofa-panel">
+  <mat-card-title>{{ heading }}</mat-card-title>
+  <mat-card-subtitle *ngIf="subheading">{{ subheading }}</mat-card-subtitle>
+  <mat-card-content>
+    <ng-content></ng-content>
+  </mat-card-content>
+</mat-card>

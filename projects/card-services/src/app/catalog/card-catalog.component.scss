@@ -1,0 +1,32 @@
+.cards {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 4px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.terms {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.tray {
+  margin-top: 16px;
+  font-weight: 600;
+}

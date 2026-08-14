@@ -1,0 +1,15 @@
+{
+  "name": "bofa-ds",
+  "version": "3.14.2",
+  "description": "Bank of America design system: branded components built on Angular Material. Consumed by every product application.",
+  "peerDependencies": {
+    "@angular/common": "^14.2.0",
+    "@angular/core": "^14.2.0",
+    "@angular/material": "^14.2.0",
+    "@angular/cdk": "^14.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

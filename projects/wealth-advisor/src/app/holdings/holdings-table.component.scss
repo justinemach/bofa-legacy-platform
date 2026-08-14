@@ -1,0 +1,30 @@
+/* Table branding. Header and cell typography are applied through Material's
+ * internal table classes, which is how the estate has always done it. */
+.holdings-table {
+  width: 100%;
+
+  ::ng-deep .mat-header-cell {
+    color: #012169;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  ::ng-deep .mat-cell {
+    font-size: 14px;
+  }
+
+  ::ng-deep .mat-row:hover {
+    background: #f0f4fa;
+  }
+
+  .down {
+    color: #b00020;
+  }
+}
+
+.total {
+  margin-top: 16px;
+  text-align: right;
+}

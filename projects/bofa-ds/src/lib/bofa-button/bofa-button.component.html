@@ -1,0 +1,9 @@
+<button
+  mat-raised-button
+  [color]="color"
+  [disabled]="disabled"
+  class="bofa-button"
+  (click)="pressed.emit()"
+>
+  <ng-content></ng-content>
+</button>

@@ -1,0 +1,33 @@
+.accounts {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+
+  li {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: center;
+    padding: 12px 4px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+}
+
+.name {
+  font-weight: 600;
+}
+
+.type {
+  color: #6b7280;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.balance {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.total {
+  margin-top: 16px;
+  text-align: right;
+}

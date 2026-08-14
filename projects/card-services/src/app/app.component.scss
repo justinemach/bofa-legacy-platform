@@ -1,0 +1,19 @@
+/* Tab chrome. The active-label colour is applied through Material's internal
+ * label class because the legacy tab group has no themable token for it. */
+.card-tabs {
+  margin-top: 16px;
+
+  ::ng-deep .mat-tab-label {
+    font-weight: 600;
+    opacity: 1;
+  }
+
+  ::ng-deep .mat-tab-label-active {
+    color: #012169;
+  }
+
+  ::ng-deep .mat-ink-bar {
+    background-color: #012169;
+    height: 3px;
+  }
+}

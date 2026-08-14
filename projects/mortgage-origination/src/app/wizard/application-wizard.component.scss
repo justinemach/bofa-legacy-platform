@@ -1,0 +1,34 @@
+/* Wizard chrome. Step header colours come from Material's internal step
+ * classes; the legacy stepper does not expose them as theme tokens. */
+.wizard {
+  background: transparent;
+
+  ::ng-deep .mat-step-header .mat-step-icon-selected {
+    background-color: #012169;
+  }
+
+  ::ng-deep .mat-step-label-selected {
+    font-weight: 700;
+  }
+
+  ::ng-deep .mat-horizontal-content-container {
+    padding: 16px 8px 24px;
+  }
+}
+
+.step-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+  gap: 8px;
+}
+
+.loan-amount {
+  margin: 8px 0 16px;
+}
+
+.rate {
+  font-size: 22px;
+  font-weight: 700;
+  color: #012169;
+}

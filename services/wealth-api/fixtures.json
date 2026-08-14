@@ -1,0 +1,16 @@
+{
+  "/holdings": [
+    {
+      "symbol": "IVV",
+      "description": "S&P 500 Index ETF",
+      "quantity": 340,
+      "marketValue": 178160
+    },
+    {
+      "symbol": "BAC",
+      "description": "Bank of America Corp",
+      "quantity": 2500,
+      "marketValue": 98750
+    }
+  ]
+}

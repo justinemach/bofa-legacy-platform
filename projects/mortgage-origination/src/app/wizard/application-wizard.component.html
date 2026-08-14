@@ -1,0 +1,60 @@
+<mat-horizontal-stepper class="wizard" linear>
+  <mat-step [stepControl]="borrowerForm" label="Borrower">
+    <form [formGroup]="borrowerForm" class="step-form">
+      <mat-form-field appearance="standard">
+        <mat-label>Full name</mat-label>
+        <input matInput formControlName="fullName" placeholder="As it appears on your ID" />
+      </mat-form-field>
+
+      <mat-form-field appearance="standard">
+        <mat-label>Annual income</mat-label>
+        <input matInput type="number" formControlName="annualIncome" />
+      </mat-form-field>
+
+      <mat-form-field appearance="standard">
+        <mat-label>Credit band</mat-label>
+        <mat-select formControlName="creditBand">
+          <mat-option *ngFor="let band of creditBands" [value]="band">{{ band }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" matStepperNext>Continue</button>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="propertyForm" label="Property">
+    <form [formGroup]="propertyForm" class="step-form">
+      <mat-form-field appearance="standard">
+        <mat-label>Purchase price</mat-label>
+        <input matInput type="number" formControlName="purchasePrice" />
+      </mat-form-field>
+
+      <mat-form-field appearance="standard">
+        <mat-label>Down payment</mat-label>
+        <input matInput type="number" formControlName="downPayment" />
+      </mat-form-field>
+
+      <mat-form-field appearance="standard">
+        <mat-label>Term (years)</mat-label>
+        <mat-select formControlName="term">
+          <mat-option *ngFor="let term of terms" [value]="term">{{ term }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <p class="loan-amount">Loan amount: <strong>{{ loanAmount | bofaMoney }}</strong></p>
+
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-raised-button color="primary" matStepperNext (click)="requestQuote()">
+        Get my rate
+      </button>
+    </form>
+  </mat-step>
+
+  <mat-step label="Quote">
+    <bofa-panel heading="Your estimated rate" *ngIf="quote as q">
+      <p class="rate">{{ q.ratePercent }}% for {{ q.term }} years</p>
+      <p>Estimated monthly principal &amp; interest: <strong>{{ q.monthlyPayment | bofaMoney }}</strong></p>
+    </bofa-panel>
+    <p *ngIf="!quote">Complete the previous steps to see a rate.</p>
+  </mat-step>
+</mat-horizontal-stepper>

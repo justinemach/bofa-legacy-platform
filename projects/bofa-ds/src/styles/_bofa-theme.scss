@@ -1,0 +1,35 @@
+/*
+ * Bank of America Material theme. Every product application imports this file so the
+ * whole estate shares one palette and one type scale.
+ *
+ * Owned by the design-system guild. Palette values are locked by brand and must
+ * not change during any framework upgrade.
+ */
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$bofa-primary: mat-palette($mat-indigo, 900, 700, 900);
+$bofa-accent: mat-palette($mat-amber, A200, A100, A400);
+$bofa-warn: mat-palette($mat-red);
+
+$bofa-typography: mat-typography-config(
+  $font-family: 'Roboto, "Helvetica Neue", sans-serif',
+  $headline: mat-typography-level(28px, 34px, 700),
+  $title: mat-typography-level(20px, 26px, 600),
+  $body-1: mat-typography-level(14px, 22px, 400)
+);
+
+$bofa-theme: mat-light-theme(
+  (
+    color: (
+      primary: $bofa-primary,
+      accent: $bofa-accent,
+      warn: $bofa-warn,
+    ),
+    typography: $bofa-typography,
+  )
+);
+
+@include angular-material-theme($bofa-theme);
+@include mat-base-typography($bofa-typography);

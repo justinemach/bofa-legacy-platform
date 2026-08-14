@@ -1,0 +1,14 @@
+.scheduled {
+  width: 100%;
+  border-collapse: collapse;
+
+  td {
+    padding: 10px 4px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  td:last-child {
+    text-align: right;
+    color: #6b7280;
+  }
+}

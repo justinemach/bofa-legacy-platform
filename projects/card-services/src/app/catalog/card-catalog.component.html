@@ -1,0 +1,27 @@
+<bofa-panel heading="Card catalogue" subheading="Products open to new applicants">
+  <bofa-tag-list
+    [tags]="filters"
+    [selected]="activeFilter"
+    (tagSelected)="onFilter($event)"
+  ></bofa-tag-list>
+
+  <ul class="cards">
+    <li *ngFor="let card of visibleCards">
+      <div class="details">
+        <span class="name">{{ card.name }}</span>
+        <span class="terms">{{ card.apr }} variable APR · {{ card.annualFee === 0 ? 'No annual fee' : (card.annualFee | bofaMoney) + ' annual fee' }}</span>
+      </div>
+      <bofa-button
+        *ngIf="compareTrayEnabled"
+        variant="secondary"
+        (pressed)="toggleCompare(card)"
+      >
+        Compare
+      </bofa-button>
+    </li>
+  </ul>
+
+  <p class="tray" *ngIf="compare.length > 0">
+    Comparing {{ compare.length }} card(s).
+  </p>
+</bofa-panel>

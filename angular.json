@@ -1,0 +1,512 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "defaultProject": "digital-banking",
+  "cli": {
+    "analytics": false,
+    "schematicCollections": [
+      "@schematics/angular"
+    ]
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
+  "projects": {
+    "bofa-ds": {
+      "projectType": "library",
+      "root": "projects/bofa-ds",
+      "sourceRoot": "projects/bofa-ds/src",
+      "prefix": "bofa",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/bofa-ds/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/bofa-ds/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/bofa-ds/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/bofa-ds/tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "main": "projects/bofa-ds/src/test.ts"
+          }
+        }
+      }
+    },
+    "bofa-core": {
+      "projectType": "library",
+      "root": "projects/bofa-core",
+      "sourceRoot": "projects/bofa-core/src",
+      "prefix": "bofa",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/bofa-core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/bofa-core/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/bofa-core/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/bofa-core/tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "main": "projects/bofa-core/src/test.ts"
+          }
+        }
+      }
+    },
+    "bofa-compliance": {
+      "projectType": "library",
+      "root": "projects/bofa-compliance",
+      "sourceRoot": "projects/bofa-compliance/src",
+      "prefix": "bofa",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/bofa-compliance/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/bofa-compliance/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/bofa-compliance/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/bofa-compliance/tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "main": "projects/bofa-compliance/src/test.ts"
+          }
+        }
+      }
+    },
+    "digital-banking": {
+      "projectType": "application",
+      "root": "projects/digital-banking",
+      "sourceRoot": "projects/digital-banking/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/digital-banking",
+            "index": "projects/digital-banking/src/index.html",
+            "main": "projects/digital-banking/src/main.ts",
+            "polyfills": "projects/digital-banking/src/polyfills.ts",
+            "tsConfig": "projects/digital-banking/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [],
+            "styles": [
+              "projects/digital-banking/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "port": 4200
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "digital-banking:build:production"
+            },
+            "development": {
+              "browserTarget": "digital-banking:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": "projects/digital-banking/src/polyfills.ts",
+            "tsConfig": "projects/digital-banking/tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "styles": [
+              "projects/digital-banking/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [],
+            "main": "projects/digital-banking/src/test.ts"
+          }
+        }
+      }
+    },
+    "card-services": {
+      "projectType": "application",
+      "root": "projects/card-services",
+      "sourceRoot": "projects/card-services/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/card-services",
+            "index": "projects/card-services/src/index.html",
+            "main": "projects/card-services/src/main.ts",
+            "polyfills": "projects/card-services/src/polyfills.ts",
+            "tsConfig": "projects/card-services/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [],
+            "styles": [
+              "projects/card-services/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "port": 4201
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "card-services:build:production"
+            },
+            "development": {
+              "browserTarget": "card-services:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": "projects/card-services/src/polyfills.ts",
+            "tsConfig": "projects/card-services/tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "styles": [
+              "projects/card-services/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [],
+            "main": "projects/card-services/src/test.ts"
+          }
+        }
+      }
+    },
+    "mortgage-origination": {
+      "projectType": "application",
+      "root": "projects/mortgage-origination",
+      "sourceRoot": "projects/mortgage-origination/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/mortgage-origination",
+            "index": "projects/mortgage-origination/src/index.html",
+            "main": "projects/mortgage-origination/src/main.ts",
+            "polyfills": "projects/mortgage-origination/src/polyfills.ts",
+            "tsConfig": "projects/mortgage-origination/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [],
+            "styles": [
+              "projects/mortgage-origination/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "port": 4202
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mortgage-origination:build:production"
+            },
+            "development": {
+              "browserTarget": "mortgage-origination:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": "projects/mortgage-origination/src/polyfills.ts",
+            "tsConfig": "projects/mortgage-origination/tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "styles": [
+              "projects/mortgage-origination/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [],
+            "main": "projects/mortgage-origination/src/test.ts"
+          }
+        }
+      }
+    },
+    "wealth-advisor": {
+      "projectType": "application",
+      "root": "projects/wealth-advisor",
+      "sourceRoot": "projects/wealth-advisor/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/wealth-advisor",
+            "index": "projects/wealth-advisor/src/index.html",
+            "main": "projects/wealth-advisor/src/main.ts",
+            "polyfills": "projects/wealth-advisor/src/polyfills.ts",
+            "tsConfig": "projects/wealth-advisor/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [],
+            "styles": [
+              "projects/wealth-advisor/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "port": 4203
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "wealth-advisor:build:production"
+            },
+            "development": {
+              "browserTarget": "wealth-advisor:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": "projects/wealth-advisor/src/polyfills.ts",
+            "tsConfig": "projects/wealth-advisor/tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "styles": [
+              "projects/wealth-advisor/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [],
+            "main": "projects/wealth-advisor/src/test.ts"
+          }
+        }
+      }
+    },
+    "small-business-banking": {
+      "projectType": "application",
+      "root": "projects/small-business-banking",
+      "sourceRoot": "projects/small-business-banking/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/small-business-banking",
+            "index": "projects/small-business-banking/src/index.html",
+            "main": "projects/small-business-banking/src/main.ts",
+            "polyfills": "projects/small-business-banking/src/polyfills.ts",
+            "tsConfig": "projects/small-business-banking/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [],
+            "styles": [
+              "projects/small-business-banking/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "port": 4204
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "small-business-banking:build:production"
+            },
+            "development": {
+              "browserTarget": "small-business-banking:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": "projects/small-business-banking/src/polyfills.ts",
+            "tsConfig": "projects/small-business-banking/tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "styles": [
+              "projects/small-business-banking/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [],
+            "main": "projects/small-business-banking/src/test.ts"
+          }
+        }
+      }
+    }
+  }
+}
