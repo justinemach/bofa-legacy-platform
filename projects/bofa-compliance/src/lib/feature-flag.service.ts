@@ -20,12 +20,12 @@ export class FeatureFlagService {
     return this.flags$.asObservable();
   }
 
-  /** Used by the ops console; kept on the old subscribe signature. */
+  /** Used by the ops console. */
   logAll(): void {
-    this.flags$.subscribe(
-      (flags) => console.log('[flags]', flags),
-      (error) => console.error('[flags]', error),
-      () => console.log('[flags] stream complete')
-    );
+    this.flags$.subscribe({
+      next: (flags) => console.log('[flags]', flags),
+      error: (error) => console.error('[flags]', error),
+      complete: () => console.log('[flags] stream complete'),
+    });
   }
 }
