@@ -41,3 +41,8 @@ library's workstream rather than making it yourself.
 
 Read `MIGRATION.md` first. It lists every known Angular 18 blocker, the file it
 lives in, and which workstream owns it.
+
+`docs/DEMO-RUNBOOK.md` describes how the migration programme is run end to end:
+the workstream sequencing, the orchestrator and per-workstream playbooks, and
+the rules every session works under. Read it if you are orchestrating the
+migration rather than executing a single workstream.
